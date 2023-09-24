@@ -1,0 +1,24 @@
+/* Estilos generales del cuerpo del sitio */
+body {
+    width: 100%;
+    margin: 0;
+    font-size: 16px;
+    color: #bab8b8;
+    background-color: rgba(159, 162, 206, 0.8);
+    font-family: Tahoma, sans-serif; 
+  }
+  
+  /* Estilos del contenedor principal */
+  div {
+    width: 90%; 
+    max-width: 800px; 
+    background: rgba(5, 9, 63, 0.6);
+    margin: 2% auto;
+    padding: 20px;
+    margin-bottom: 175px;
+    border-radius: 5px;
+  }
+
+  .editar-producto{
+    display: none;
+  }
