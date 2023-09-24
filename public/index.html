@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD PARA COMPONENTES DE PC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <main>
+            <h1>CRUD PARA PRODUCTOS DE PC</h1>
+            <p>ESC. 2023</p>
+            <section>
+                <h2>Agregar Productos</h2>
+                <form class="agregar-productos" id="agregar-producto">
+                    <input type="text" id="nombre" placeholder="Nombre del producto" required>
+                    <input type="number" id="precio" placeholder="Precion del producto" min="0" required>
+                    <button type="submit" id="submit-productos">Agregar</button>
+                </form>
+            </section>
+            <section class="tabla-productos">
+                <h2>Tabla de productos</h2>
+                <table id="tabla-productos">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </section>
+            <section class="a">
+                <h2>Editar producto</h2>
+                <form class="editar-producto" id="editar-producto">
+                    <input type="hidden" id="editar-id-producto">
+                    <input type="text" id="editar-nombre-producto" placeholder="Nombre del producto" required>
+                    <input type="number" id="editar-precio-producto" placeholder="Precio del producto" required>
+                    <button type="submit">Guardar</button>
+                    <button type="button" id="cancelar">Cancelar</button>
+                </form>
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </div>
+    <footer>
+        <p>No Copyrigth
+            <a href="https://github.com/KevinSilvaRivera/CRUD-web.git" target="_blank"> Repositorio:
+                https://github.com/KevinSilvaRivera/CRUD-web.git</a>
+        </p>
+    </footer>
+</body>
+</html>
