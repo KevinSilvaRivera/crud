@@ -37,3 +37,4 @@ app.get('/api/producto', async (req, res) => {
     res.status(500).json({ error: 'Error al obtener los productos' });
   }
 });
+
