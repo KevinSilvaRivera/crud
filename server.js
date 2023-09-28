@@ -38,3 +38,13 @@ app.get('/api/producto', async (req, res) => {
   }
 });
 
+// Ruta para crear un nuevo producto
+app.post('/api/producto', async (req, res) => {
+  try {
+    const newProduct = new Product(req.body);
+    await newProduct.save();
+    res.status(201).json(newProduct);
+  } catch (error) {
+    res.status(500).json({ error: 'Error al crear el producto' });
+  }
+});
