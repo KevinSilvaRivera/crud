@@ -26,8 +26,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-
-//Continuar desde aqui
 // Ruta para obtener todos los productos
 app.get('/api/producto', async (req, res) => {
   try {
@@ -47,4 +45,38 @@ app.post('/api/producto', async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: 'Error al crear el producto' });
   }
+});
+
+// Ruta para actualizar un producto por ID
+app.put('/api/producto/:id', async (req, res) => {
+  try {
+    const updatedProduct = await Product.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    if (!updatedProduct) {
+      return res.status(404).json({ error: 'Producto no encontrado' });
+    }
+    res.json(updatedProduct);
+  } catch (error) {
+    res.status(500).json({ error: 'Error al actualizar el producto' });
+  }
+});
+
+// Ruta para eliminar un producto por ID
+app.delete('/api/producto/:id', async (req, res) => {
+  try {
+    const deletedProduct = await Product.findByIdAndRemove(req.params.id);
+    if (!deletedProduct) {
+      return res.status(404).json({ error: 'Producto no encontrado' });
+    }
+    res.json(deletedProduct);
+  } catch (error) {
+    res.status(500).json({ error: 'Error al eliminar el producto' });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Servidor en ejecución en el puerto ${port}`);
 });
