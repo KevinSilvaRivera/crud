@@ -127,3 +127,19 @@ async function cargarProductos() {
   
     cargarProductos();
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const formEditarProducto = document.getElementById('editar-producto');
+    const cancelarButton = document.getElementById('cancelar');
+    const editarNombreProductoInput = document.getElementById('editar-nombre-producto');
+    const editarPrecioProductoInput = document.getElementById('editar-precio-producto');
+
+    // Agrega un controlador de eventos al botón Cancelar
+    cancelarButton.addEventListener('click', () => {
+      // Limpia los campos de entrada de texto
+      editarNombreProductoInput.value = '';
+      editarPrecioProductoInput.value = '';
+      const editForm = document.querySelector("#editar-producto");
+      editForm.style.display = "none";
+    });
+  });
